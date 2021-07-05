@@ -8,6 +8,23 @@ namespace lvc
 
 namespace lv
 {
+	class BaseObj
+	{
+	private:
+		lvc::lv_obj_t* lv_obj;
 	
-	lvc::lv_
+	public:
+		// Getter Functions
+		lvc::lv_obj_t* getLvObj();
+
+		// Setter Functions
+		void setWidth(int width);
+		void setHeight(int height);
+		void setSize(int width, int height);
+
+		// Constructors & Destructors
+		BaseObj();
+		~BaseObj();
+		BaseObj(lvc::lv_obj_t* parent);
+	};
 }
