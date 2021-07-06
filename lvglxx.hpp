@@ -8,17 +8,20 @@ namespace lvc
 	}
 }
 
-#include <concepts>
-
-template<typename T>		// Defining "numeric" Concept
-concept numeric = std::integral<T> or std::floating_point<T>;
-
-template<numeric T>
-struct Vector2
+namespace lv
 {
-	T x;
-	T y;
-};
+	/* // Broken Concepts in MSVC (or broken code ?)
+	#include <concepts>
+	template<typename T>		// Defining "numeric" Concept
+	concept numeric = std::integral<T> or std::floating_point<T>;
+	template<numeric T>
+	*/
+	template<typename T> struct Vector2
+	{
+		T x;
+		T y;
+	};
+}
 
 namespace lv
 {
@@ -34,17 +37,17 @@ namespace lv
 		// Getter Functions
 		int getWidth();
 		int getHeight();
-		Vector2<int> getSize();
+		lv::Vector2<int> getSize();
 
 		// Setter Functions
 		void setWidth(int width);
 		void setHeight(int height);
-		void setSize(Vector2<int> x_and_y);
+		void setSize(lv::Vector2<int> dimensions);
 		void setSize(int width, int height);
 
 		// Constructors & Destructors
 		BaseObj();
-		BaseObj(lv::BaseObj& parent);
+		BaseObj(BaseObj& parent);
 	   ~BaseObj();
 	};
 }

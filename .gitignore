@@ -1,2 +1,5 @@
-vc140.pdb
+*.pdb
+*.dll
+*.lib
+*.obj
 .vscode/
