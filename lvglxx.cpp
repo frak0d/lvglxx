@@ -4,6 +4,8 @@
 /*         lv::BaseObj         */
 /*******************************/
 
+///////////////////////////////////////////////
+
 // Setting Width of BaseObj
 void lv::BaseObj::setWidth(int width)
 {
@@ -22,6 +24,8 @@ void lv::BaseObj::setSize(int width, int height)
 	lvc::lv_obj_set_size(lv_obj, width, height);
 }
 
+////////////////////////////////////////////////
+
 // Constructor without aguments creates a Window
 lv::BaseObj::BaseObj()
 {
@@ -29,9 +33,9 @@ lv::BaseObj::BaseObj()
 }
 
 // BaseObj Constructor with Aguments adds BaseObj to Parent
-lv::BaseObj::BaseObj(lvc::lv_obj_t* parent)
+lv::BaseObj::BaseObj(lv::BaseObj& parent)
 {
-	lv_obj = lvc::lv_obj_create(parent);
+	lv_obj = lvc::lv_obj_create(parent.getLvObj());
 }
 
 // BaseObj Destructor
