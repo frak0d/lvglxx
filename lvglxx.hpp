@@ -2,10 +2,7 @@
 
 namespace lvc
 {
-	extern "C"
-	{
-		#include "lvgl/lvgl.h"
-	}
+	#include "lvgl/lvgl.h"
 }
 
 namespace lv
