@@ -12,6 +12,21 @@ lvc::lv_obj_t* lv::BaseObj::getLvObj()
 
 ///////////////////////////////////////////////
 
+int lv::BaseObj::getX()
+{
+	return lvc::lv_obj_get_x(lv_obj);
+}
+
+int lv::BaseObj::getY()
+{
+	return lvc::lv_obj_get_y(lv_obj);
+}
+
+lv::Vector2<int> lv::BaseObj::getPos()
+{
+	return {getX(), getY()};
+}
+
 // Getting Width of BaseObj
 int lv::BaseObj::getWidth()
 {
@@ -27,8 +42,7 @@ int lv::BaseObj::getHeight()
 // Getting Both Width & Height of BaseObj
 lv::Vector2<int> lv::BaseObj::getSize()
 {
-	return {lvc::lv_obj_get_width(lv_obj),		//X
-			lvc::lv_obj_get_height(lv_obj)};	//Y
+	return {getWidth(), getHeight()};
 }
 
 ///////////////////////////////////////////////

@@ -33,7 +33,7 @@ namespace lv
 
 		// Getter Functions
 		int getX();
-		int geyY();
+		int getY();
 		Vector2<int> getPos();
 
 		int getWidth();
