@@ -32,15 +32,31 @@ namespace lv
 		lvc::lv_obj_t* getLvObj();
 
 		// Getter Functions
+		int getX();
+		int geyY();
+		Vector2<int> getPos();
+
 		int getWidth();
 		int getHeight();
-		lv::Vector2<int> getSize();
+		Vector2<int> getSize();
+
+		int getAlign();
+		BaseObj& getParent(BaseObj& parent);
+		BaseObj& getChild(BaseObj& parent);
 
 		// Setter Functions
+		void setX(int x);
+		void setY(int y);
+		void setPos(int x, int y);
+		void setPos(Vector2<int> dimensions);
+
 		void setWidth(int width);
 		void setHeight(int height);
-		void setSize(lv::Vector2<int> dimensions);
+		void setSize(Vector2<int> dimensions);
 		void setSize(int width, int height);
+
+		void setAlign(int alignment);
+		void setParent(BaseObj& parent);
 
 		// Constructors & Destructors
 		BaseObj();
