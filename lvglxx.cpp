@@ -47,6 +47,16 @@ lv::Vector2<int> lv::BaseObj::getSize()
 
 ///////////////////////////////////////////////
 
+void lv::BaseObj::setX(int x)
+{
+	lvc::lv_obj_set_x(lv_obj, x);
+}
+
+void lv::BaseObj::setY(int y)
+{
+	lvc::lv_obj_set_y(lv_obj, y);
+}
+
 // Setting Width of BaseObj
 void lv::BaseObj::setWidth(int width)
 {
