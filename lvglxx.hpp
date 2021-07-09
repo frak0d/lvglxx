@@ -34,11 +34,11 @@ namespace lv
 		// Getter Functions
 		int getX();
 		int getY();
-		Vector2<int> getPos();
+		lv::Vector2<int> getPos();
 
 		int getWidth();
 		int getHeight();
-		Vector2<int> getSize();
+		lv::Vector2<int> getSize();
 
 		int getAlign();
 		BaseObj& getParent(BaseObj& parent);
@@ -48,11 +48,11 @@ namespace lv
 		void setX(int x);
 		void setY(int y);
 		void setPos(int x, int y);
-		void setPos(Vector2<int> dimensions);
+		void setPos(lv::Vector2<int> dimensions);
 
 		void setWidth(int width);
 		void setHeight(int height);
-		void setSize(Vector2<int> dimensions);
+		void setSize(lv::Vector2<int> dimensions);
 		void setSize(int width, int height);
 
 		void setAlign(int alignment);
