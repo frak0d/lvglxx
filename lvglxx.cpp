@@ -57,6 +57,16 @@ void lv::BaseObj::setY(int y)
 	lvc::lv_obj_set_y(lv_obj, y);
 }
 
+void lv::BaseObj::setPos(int x, int y)
+{
+	lvc::lv_obj_set_pos(lv_obj, x, y);
+}
+
+void lv::BaseObj::setPos(lv::Vector2<int> coords)
+{
+	lvc::lv_obj_set_pos(lv_obj, coords.x, coords.y);
+}
+
 // Setting Width of BaseObj
 void lv::BaseObj::setWidth(int width)
 {
