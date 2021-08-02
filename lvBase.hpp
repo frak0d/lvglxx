@@ -25,7 +25,7 @@ namespace lv
 
 		int getAlign();
 		BaseObj& getParent();
-		BaseObj& getChild();
+        std::vector<lv::BaseObj&> getChildren();
 
 		// Setter Functions
 		void setX(int x);

@@ -1,8 +1,15 @@
 #pragma once
 
-namespace lvc
+#include <vector>
+#include <cstdint>
+#include <iostream>
+
+namespace lvc				// LVGL C Headers are inside namespace lvc
 {
-	#include "lvgl/lvgl.h"
+	extern "C"				// without extern C, it clashes with <cstdint>
+	{
+		#include "lvgl/lvgl.h"
+	}
 }
 
 namespace lv

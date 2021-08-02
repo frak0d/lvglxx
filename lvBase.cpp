@@ -52,6 +52,13 @@ lv::BaseObj& lv::BaseObj::getParent()
 	//return lvc::lv_obj_get_parent(lv_obj);
 }
 
+std::vector<lv::BaseObj&> lv::BaseObj::getChildren()
+{	// WORK IN PROGRESS //
+	std::vector<lv::BaseObj&> child_list;
+	uint32_t child_count = lvc::lv_obj_get_child_cnt(lv_obj);
+	return child_list;
+}
+
 ///////////////////////////////////////////////
 
 void lv::BaseObj::setX(int x)
