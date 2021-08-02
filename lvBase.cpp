@@ -45,6 +45,13 @@ lv::Vector2<int> lv::BaseObj::getSize()
 	return {getWidth(), getHeight()};
 }
 
+lv::BaseObj& lv::BaseObj::getParent()
+{
+	return *selfParent;	 // will need to handle deleted parent as well
+						 // and destruct all children when parent is destructed
+	//return lvc::lv_obj_get_parent(lv_obj);
+}
+
 ///////////////////////////////////////////////
 
 void lv::BaseObj::setX(int x)
@@ -91,16 +98,23 @@ void lv::BaseObj::setSize(int width, int height)
 	lvc::lv_obj_set_size(lv_obj, width, height);
 }
 
+// Setting Parent Object
+void lv::BaseObj::setParent(lv::BaseObj& parent)
+{
+	selfParent = &parent;
+	lvc::lv_obj_set_parent(lv_obj, parent.getLvObj());
+}
+
 ////////////////////////////////////////////////
 
 // Constructor without aguments creates a Window
-lv::BaseObj:: BaseObj()
+lv::BaseObj::BaseObj()
 {
 	lv_obj = lvc::lv_obj_create(NULL);
 }
 
 // BaseObj Constructor with Aguments adds BaseObj to Parent
-lv::BaseObj:: BaseObj(lv::BaseObj& parent)
+lv::BaseObj::BaseObj(lv::BaseObj& parent)
 {
 	lv_obj = lvc::lv_obj_create(parent.getLvObj());
 }
